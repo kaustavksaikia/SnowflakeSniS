@@ -37,7 +37,7 @@ if ingredients:
         ingredients_string +=' '
         search_on = pd_df.loc[pd_df['FRUIT_NAME'] == each_val, 'SEARCH_ON'].iloc[0]
         smoothiefroot_response = req.get("https://my.smoothiefroot.com/api/fruit/" + search_on)
-        st.subheader(each_val + 'Nutritional Information')
+        st.subheader(each_val + ' Nutritional Information')
         smoothie_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
 
     insert_statement = """INSERT INTO smoothies.public.orders(ingredients, name_on_order)
